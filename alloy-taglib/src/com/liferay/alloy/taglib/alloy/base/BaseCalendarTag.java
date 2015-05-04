@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseCalendarTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseCalendarTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1674,8 +1674,6 @@ public abstract class BaseCalendarTag extends com.liferay.taglib.util.IncludeTag
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_allowNone = true;
 		_blankDays = null;
 		_boundingBox = null;

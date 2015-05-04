@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseThumbRatingTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseThumbRatingTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1074,8 +1074,6 @@ public abstract class BaseThumbRatingTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_boundingBox = null;
 		_canReset = true;
 		_contentBox = null;

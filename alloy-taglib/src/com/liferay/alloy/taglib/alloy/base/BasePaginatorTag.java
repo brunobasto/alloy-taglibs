@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BasePaginatorTag extends com.liferay.taglib.util.IncludeTag {
+public class BasePaginatorTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -914,8 +914,6 @@ public abstract class BasePaginatorTag extends com.liferay.taglib.util.IncludeTa
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_alwaysVisible = true;
 		_containers = null;
 		_destroyed = false;

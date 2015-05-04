@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseDatePickerSelectTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseDatePickerSelectTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1284,8 +1284,6 @@ public abstract class BaseDatePickerSelectTag extends com.liferay.taglib.util.In
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_appendOrder = null;
 		_boundingBox = null;
 		_buttonNode = null;

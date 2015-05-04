@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseOverlayContextPanelTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseOverlayContextPanelTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1434,8 +1434,6 @@ public abstract class BaseOverlayContextPanelTag extends com.liferay.taglib.util
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_align = null;
 		_alignOn = null;
 		_anim = null;

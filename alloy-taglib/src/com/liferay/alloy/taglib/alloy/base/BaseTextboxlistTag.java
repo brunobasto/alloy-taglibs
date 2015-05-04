@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseTextboxlistTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseTextboxlistTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1704,8 +1704,6 @@ public abstract class BaseTextboxlistTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_alwaysShowContainer = false;
 		_applyLocalFilter = true;
 		_autoHighlight = true;
