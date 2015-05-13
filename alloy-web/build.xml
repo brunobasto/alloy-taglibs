@@ -6,7 +6,7 @@
 	<property name="war.file" value="alloy-taglibs-${project.version}" />
 
 	<target name="clean" depends="build-common-web.clean">
-		<delete failonerror="false">
+		<delete>
 			<fileset dir="docroot/WEB-INF/lib" includes="*.jar" />
 		</delete>
 	</target>

@@ -5,7 +5,6 @@ import com.liferay.alloy.tools.model.Component;
 import com.liferay.portal.freemarker.FreeMarkerUtil;
 import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.GetterUtil;
-import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.Validator;
@@ -15,7 +14,6 @@ import com.liferay.portal.kernel.xml.Node;
 import com.liferay.portal.kernel.xml.SAXReaderUtil;
 import com.liferay.portal.kernel.xml.XPath;
 import com.liferay.portal.util.FileImpl;
-import com.liferay.portal.util.PropsImpl;
 import com.liferay.portal.xml.SAXReaderImpl;
 
 import java.io.File;
@@ -65,10 +63,6 @@ public class TagBuilder {
 			String docrootDir, String javaPackage, String jspDir,
 			String jspCommonInitPath, String tldDir)
 		throws Exception {
-
-		if (PropsUtil.getProps() == null) {
-			PropsUtil.setProps(new PropsImpl());
-		}
 
 		if (SAXReaderUtil.getSecureSAXReader() == null) {
 			(new SAXReaderUtil()).setSecureSAXReader(new SAXReaderImpl());
