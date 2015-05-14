@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseLoadingMaskTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseLoadingMaskTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -254,8 +254,6 @@ public abstract class BaseLoadingMaskTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_destroyed = false;
 		_host = null;
 		_initialized = false;

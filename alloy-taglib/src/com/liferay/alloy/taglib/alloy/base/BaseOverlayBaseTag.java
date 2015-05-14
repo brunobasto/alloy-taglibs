@@ -23,7 +23,7 @@ import javax.servlet.jsp.JspException;
  * @author Nathan Cavanaugh
  * @generated
  */
-public abstract class BaseOverlayBaseTag extends com.liferay.taglib.util.IncludeTag {
+public class BaseOverlayBaseTag extends com.liferay.taglib.util.IncludeTag {
 
 	@Override
 	public int doStartTag() throws JspException {
@@ -1074,8 +1074,6 @@ public abstract class BaseOverlayBaseTag extends com.liferay.taglib.util.Include
 
 	@Override
 	protected void cleanUp() {
-		super.cleanUp();
-
 		_align = null;
 		_alignOn = null;
 		_overlaybaseBodyContent = null;

@@ -1,5 +1,6 @@
 package com.liferay.alloy.tools.model;
 
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
 import com.liferay.portal.kernel.util.TextFormatter;
@@ -7,6 +8,7 @@ import com.liferay.portal.kernel.util.Validator;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class Component extends BaseModel {
 
 	public String getAttributeNamespace() {
@@ -49,10 +51,6 @@ public class Component extends BaseModel {
 		}
 
 		return className;
-	}
-
-	public String getDescription() {
-		return _description;
 	}
 
 	public List<Attribute> getEvents() {
@@ -98,6 +96,30 @@ public class Component extends BaseModel {
 		return _bodyContent;
 	}
 
+	public boolean isChildClassOf(String className) {
+		try {
+			String parentClassName = getParentClass();
+
+			if (Validator.isNotNull(parentClassName)) {
+				Thread currentThread = Thread.currentThread();
+
+				ClassLoader contextClassLoader =
+					currentThread.getContextClassLoader();
+
+				PortalClassLoaderUtil.setClassLoader(contextClassLoader);
+
+				Class<?> parentClass = Class.forName(parentClassName);
+
+				Class<?> clazz = Class.forName(className);
+
+				return clazz.isAssignableFrom(parentClass);
+			}
+		} catch (Exception e) {
+		}
+
+		return false;
+	}
+
 	public boolean isDynamicAttributes() {
 		return _dynamicAttributes;
 	}
@@ -124,10 +146,6 @@ public class Component extends BaseModel {
 
 	public void setClassName(String className) {
 		_className = className;
-	}
-
-	public void setDescription(String description) {
-		_description = description;
 	}
 
 	public void setDynamicAttributes(boolean dynamicAttributes) {
@@ -158,14 +176,13 @@ public class Component extends BaseModel {
 		_writeJSP = writeJSP;
 	}
 
-	private static final String _CLASS_NAME_SUFFIX = "Tag";
+	private final static String _CLASS_NAME_SUFFIX = "Tag";
 
 	private boolean _alloyComponent;
 	private List<Attribute> _attributes;
 	private String[] _authors;
 	private boolean _bodyContent;
 	private String _className;
-	private String _description;
 	private boolean _dynamicAttributes;
 	private List<Attribute> _events;
 	private String _module;
