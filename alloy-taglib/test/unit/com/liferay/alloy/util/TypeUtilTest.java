@@ -81,4 +81,23 @@ public class TypeUtilTest {
 		Assert.assertFalse(TypeUtil.isJavaClass("foobar"));
 	}
 
+	@Test
+	public void testGetGenericsType() {
+		String actualGenericsType = "?";
+		String expectedGenericsType = TypeUtil.getGenericsType("java.util.List<?>");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+
+		actualGenericsType = "java.lang.String, java.lang.Object";
+		expectedGenericsType = TypeUtil.getGenericsType(
+			"java.util.Map<java.lang.String, java.lang.Object>");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+
+		actualGenericsType = null;
+		expectedGenericsType = TypeUtil.getGenericsType("long");
+
+		Assert.assertEquals(actualGenericsType, expectedGenericsType);
+	}
+
 }
