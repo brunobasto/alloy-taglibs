@@ -152,6 +152,12 @@ public class Component extends BaseModel {
 		}
 	}
 
+	public void setComponentTaglibOSGIModule(
+		boolean componentTaglibOSGIModule) {
+
+		_componentTaglibOSGIModule = componentTaglibOSGIModule;
+	}
+
 	public void setModule(String type) {
 		_module = type;
 	}
@@ -179,6 +185,7 @@ public class Component extends BaseModel {
 	private String _description;
 	private boolean _dynamicAttributes;
 	private List<Attribute> _events;
+	private boolean _componentTaglibOSGIModule;
 	private String _module;
 	private String _package;
 	private String _parentClass;
