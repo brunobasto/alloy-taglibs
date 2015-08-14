@@ -21,7 +21,6 @@ import com.liferay.portal.xml.SAXReaderImpl;
 
 import java.io.File;
 import java.io.IOException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
